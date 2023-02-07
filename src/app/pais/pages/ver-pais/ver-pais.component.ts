@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaisService } from '../../services/pais.service';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
+import { Country } from '../../interfaces/pais.interface';
 
 
 @Component({
@@ -11,6 +12,8 @@ import { switchMap } from 'rxjs/operators';
 })
 export class VerPaisComponent implements OnInit{
   
+  pais!: Country;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private paisService: PaisService
@@ -19,10 +22,11 @@ export class VerPaisComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params
       .pipe(
-        switchMap(({id}) => this.paisService.buscarPaisPorCodigo(id))
+        switchMap(({id}) => this.paisService.buscarPaisPorCodigo(id)),
+        tap(console.log) // imprime lo que devuelve el obs anterior
       )
-      .subscribe(resp => {
-        console.log(resp);
+      .subscribe(pais => {
+        this.pais = pais;
       }
         
       )
