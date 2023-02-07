@@ -1,0 +1,33 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+
+    <h3>Buscar por continente <small> {{ continenteActivo | titlecase}} </small></h3>
+    
+    <h5>Seleccione la continente</h5>
+    
+    <div class="row">
+        <div class="col">
+            <!-- [class.btn-primary] = "continente === continenteActiva" -->
+            <!-- [ngClass]="{
+                'btn-primary': continente === continenteActiva,
+                'btn-outline-primary': continente !== continenteActiva
+            }" -->
+            <button 
+                *ngFor="let continente of continentes;"
+                [class]="getClaseCSS(continente)"
+    
+                (click)="activarcontinente(continente)"> 
+                {{continente | titlecase}}
+            </button>
+        </div>
+    </div>
+    
+    <div class="alert alert-danger" *ngIf="hayError">
+        No se encontró nada con el continente {{ continenteActivo | titlecase }}
+    </div>
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+    <div class="col">
+        <app-pais-tabla [paises] = "paises"></app-pais-tabla>
+    </div>
+</div>

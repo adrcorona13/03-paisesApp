@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PorPaisComponent } from './app/pais/pages/por-pais/por-pais.component';
-import { PorRegionComponent } from './app/pais/pages/por-region/por-region.component';
+import { PorContinenteComponent } from './app/pais/pages/por-continente/por-continente.component';
 import { PorCapitalComponent } from './app/pais/pages/por-capital/por-capital.component';
 import { VerPaisComponent } from './app/pais/pages/ver-pais/ver-pais.component';
 
@@ -13,7 +13,7 @@ const routes: Routes = [
     },
     {
         path: 'region',
-        component: PorRegionComponent,
+        component: PorContinenteComponent,
     },
     {
         path: 'capital',

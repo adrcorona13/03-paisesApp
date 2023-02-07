@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorPaisComponent } from './pages/por-pais/por-pais.component';
-import { PorRegionComponent } from './pages/por-region/por-region.component';
+import { PorContinenteComponent } from './pages/por-continente/por-continente.component';
 import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { PaisTabla } from './components/pais-tabla/pais-tabla.component';
 import { PaisInput } from './components/pais-input/pais-input.component';
@@ -16,7 +16,7 @@ import { PaisInput } from './components/pais-input/pais-input.component';
     declarations:[
         PorCapitalComponent,
         PorPaisComponent,
-        PorRegionComponent,
+        PorContinenteComponent,
         VerPaisComponent, 
         PaisTabla,
         PaisInput
@@ -24,7 +24,7 @@ import { PaisInput } from './components/pais-input/pais-input.component';
     exports:[
         PorCapitalComponent,
         PorPaisComponent,
-        PorRegionComponent,
+        PorContinenteComponent,
         VerPaisComponent
     ],
     imports:[
